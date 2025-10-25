@@ -83,6 +83,16 @@ MIX_ENV=$MIX_ENV mix release
 "
 
 # ===============================
+# Change Favicon
+# ===============================
+sudo -u "$APP_USER" -H bash -c "
+wget -q --no-cache -O $APP_DIR/priv/static/favicon.ico https://raw.githubusercontent.com/wajihalsaid/siwapp/refs/heads/main/favicon.ico
+wget -q --no-cache -O $APP_DIR/_build/prod/rel/siwapp/lib/phoenix-*/priv/static/favicon.ico https://raw.githubusercontent.com/wajihalsaid/siwapp/refs/heads/main/favicon.ico
+wget -q --no-cache -O $APP_DIR/_build/prod/rel/siwapp/lib/siwapp-*/priv/static/favicon.ico https://raw.githubusercontent.com/wajihalsaid/siwapp/refs/heads/main/favicon.ico
+wget -q --no-cache -O $APP_DIR/deps/phoenix/priv/static/favicon.ico https://raw.githubusercontent.com/wajihalsaid/siwapp/refs/heads/main/favicon.ico
+"
+
+# ===============================
 # Environment File
 # ===============================
 sudo tee /etc/default/siwapp > /dev/null <<EOF
