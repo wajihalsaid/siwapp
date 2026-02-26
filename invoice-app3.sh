@@ -27,7 +27,7 @@ sudo chown -R "$APP_USER:$APP_USER" "$APP_DIR"
 # ===============================
 # Clone Siwapp Repo
 # ===============================
-sudo -u "$APP_USER" -H bash -c "git clone 'https://github.com/siwapp/siwapp.git' '$APP_DIR'"
+sudo -u "$APP_USER" -H bash -c "git clone 'https://github.com/siwapp/siwapp.git' '$APP_DIR' && cd '$APP_DIR' && git checkout 1aed7462f78368c630be3817ddde8f23118c113d"
 
 # ===============================
 # Configure PDF Options
